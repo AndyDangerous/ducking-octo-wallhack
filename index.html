@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <script src="handlebars.js"></script>
+    <script src="http://builds.emberjs.com/release/ember.js"></script>
+    <script src="http://builds.emberjs.com/release/ember-template-compiler.js"></script>
+    <script src="app.js"></script>
+
+    <link href="bootstrap.css"
+          media="screen"
+          rel="stylesheet" />
+  </head>
+
+  <body>
+    <script type='text/x-handlebars' data-template-name='application'>
+      <div class='navbar'></div>
+      <div class='container'>{{outlet}}</div>
+      <footer class='navbar'></footer>
+    </script>
+
+    <script type='text/x-handlebars' data-template-name='index'>
+      <h1>Welcome to the Flint & Flame</h1>
+      <p>{{#link-to 'about' tagName='li'}}About{{/link-to}}</p>
+      <p>{{#link-to 'products' tagName='li'}}Products{{/link-to}}</p>
+        <img {{bind-attr src="logo"}} />
+        <p>There are {{productsCount}} products</p>
+        <p>Its {{time}} right now!</p>
+    </script>
+
+    <script type='text/x-handlebars' data-template-name='about'>
+      <h1>About the fire spirits</h1>
+    </script>
+
+    <script type='text/x-handlebars' data-template-name='products'>
+      <h1>About the fire spirits</h1>
+    </script>
+  </body>
+
+</html>
