@@ -6,9 +6,7 @@
     <script src="http://builds.emberjs.com/release/ember-template-compiler.js"></script>
     <script src="app.js"></script>
 
-    <link href="bootstrap.css"
-          media="screen"
-          rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -32,7 +30,18 @@
     </script>
 
     <script type='text/x-handlebars' data-template-name='products'>
-      <h1>About the fire spirits</h1>
+      <h1>Products</h1>
+      {{#each}}
+      <h2>{{#link-to 'product' this}}{{title}}{{/link-to}}</h2>
+      <p>Buy for {{price}}</p>
+      {{/each}}
+      {{outlet}}
+    </script>
+
+    <script type='text/x-handlebars' data-template-name='product'>
+      <h1>{{title}}</h1>
+      <p> {{description}} </p>
+      <p>That shit costs: {{price}}</p>
     </script>
   </body>
 
